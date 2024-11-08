@@ -2,7 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    background: linear-gradient(to right, #4facfe, #00f2fe); /* Blauer Farbverlauf */
     color: #333;
     text-align: center;
   }
@@ -12,13 +12,13 @@ body {
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
   header {
-    background-color: #ff6b6b;
+    background-color: #4facfe; /* Dunkler Blauton für den Header */
     color: #fff;
     padding: 20px;
     border-radius: 15px;
@@ -31,13 +31,13 @@ body {
   #countdown, #info, #gallery, #guestbook, #text {
     margin-top: 20px;
     padding: 15px;
-    background-color: #f3f3f3;
+    background-color: #e3f2fd; /* Hellblauer Hintergrund für Abschnitte */
     border-radius: 10px;
   }
   
   #timer {
     font-size: 1.2em;
-    color: #ff6b6b;
+    color: #00bcd4; /* Türkisblauer Farbton für den Countdown-Text */
   }
   
   #gallery img {
@@ -58,13 +58,14 @@ body {
     padding: 10px 20px;
     margin-top: 10px;
     color: #fff;
-    background-color: #ff6b6b;
+    background-color: #00bcd4; /* Türkisblauer Button */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   button:hover {
-    background-color: #ff4b4b;
+    background-color: #0097a7; /* Dunklerer Blauton beim Hover-Effekt */
   }
   
