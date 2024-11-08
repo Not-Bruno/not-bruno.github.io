@@ -1,1 +1,52 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 18th Birthday!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Happy 18th Birthday, [Name]!</h1>
+      <p>Willkommen zur Feier des 18. Geburtstags! 🎉</p>
+    </header>
+
+    <section id="countdown">
+      <h2>Countdown bis zur großen Feier</h2>
+      <div id="timer">
+        <span id="days">0</span> Tage
+        <span id="hours">0</span> Stunden
+        <span id="minutes">0</span> Minuten
+        <span id="seconds">0</span> Sekunden
+      </div>
+    </section>
+
+    <section id="info">
+      <h2>Party-Informationen</h2>
+      <p>Ort: [Veranstaltungsort]</p>
+      <p>Datum: [Datum]</p>
+      <p>Uhrzeit: [Uhrzeit]</p>
+    </section>
+
+    <section id="gallery">
+      <h2>Foto-Galerie</h2>
+      <p>Erinnerungen an die schönsten Momente bis zum 18. Geburtstag!</p>
+      <!-- Füge deine Bilder hier ein -->
+      <img src="bild1.jpg" alt="Erinnerung 1">
+      <img src="bild2.jpg" alt="Erinnerung 2">
+      <img src="bild3.jpg" alt="Erinnerung 3">
+    </section>
+
+    <section id="guestbook">
+      <h2>Gästebuch</h2>
+      <textarea id="message" placeholder="Hinterlasse eine Geburtstagsnachricht"></textarea>
+      <button onclick="addMessage()">Absenden</button>
+      <div id="messages"></div>
+    </section>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
