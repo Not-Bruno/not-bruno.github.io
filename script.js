@@ -8,7 +8,7 @@ function startConfetti() {
     // Konfetti-Animation
     const confettiInterval = setInterval(() => {
       confetti({
-        particleCount: 7,
+        particleCount: 10,
         startVelocity: 30,
         spread: 360,
         origin: {
