@@ -1,31 +1,30 @@
 // script.js
 
-// Countdown bis zum Party-Datum
-const countdownDate = new Date("2024-12-31T19:00:00").getTime();
-
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = countdownDate - now;
-
-  if (distance >= 0) {
-    document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
-    document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
-  } else {
-    document.getElementById("countdown").innerHTML = "<h2>Die Party hat begonnen!</h2>";
+// Konfetti beim Laden der Seite auslösen
+function startConfetti() {
+    const duration = 5 * 1000; // Dauer des Effekts in Millisekunden
+    const end = Date.now() + duration;
+  
+    (function frame() {
+      // Konfetti-Parameter
+      confetti({
+        particleCount: 3,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+      });
+      confetti({
+        particleCount: 3,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 }
+      });
+  
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
   }
-}
-
-setInterval(updateCountdown, 1000);
-
-// Gästebuchfunktion zum Hinzufügen von Nachrichten
-function addMessage() {
-  const message = document.getElementById("message").value;
-  if (message.trim()) {
-    const messageElement = document.createElement("p");
-    messageElement.innerText = message;
-    document.getElementById("messages").appendChild(messageElement);
-    document.getElementById("message").value = "";
-  }
-}
+  
+  // Konfetti bei Seitenaufruf starten
+  window.onload = startConfetti;
