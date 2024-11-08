@@ -1,30 +1,27 @@
-// script.js
-
-// Konfetti beim Laden der Seite auslösen
 function startConfetti() {
-    const duration = 5 * 1000; // Dauer des Effekts in Millisekunden
-    const end = Date.now() + duration;
+    // Anzahl und Dauer des Konfetti-Effekts
+    const duration = 3 * 1000; // Dauer von 3 Sekunden
+    const animationEnd = Date.now() + duration;
   
-    (function frame() {
-      // Konfetti-Parameter
+    const randomInRange = (min, max) => Math.random() * (max - min) + min;
+  
+    // Konfetti-Animation
+    const confettiInterval = setInterval(() => {
       confetti({
-        particleCount: 3,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 }
-      });
-      confetti({
-        particleCount: 3,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 }
+        particleCount: 7,
+        startVelocity: 30,
+        spread: 360,
+        origin: {
+          x: randomInRange(0.1, 0.9), // zufälliger Startpunkt entlang der X-Achse
+          y: randomInRange(0.2, 0.6)  // zufälliger Startpunkt entlang der Y-Achse
+        },
+        colors: ['#00bcd4', '#4facfe', '#00f2fe', '#b3e5fc', '#81d4fa'] // Blautöne für das Farbthema
       });
   
-      if (Date.now() < end) {
-        requestAnimationFrame(frame);
-      }
-    })();
+      // Stoppt das Konfetti nach Ablauf der Dauer
+      if (Date.now() > animationEnd) clearInterval(confettiInterval);
+    }, 250);
   }
   
-  // Konfetti bei Seitenaufruf starten
+  // Startet Konfetti beim Laden der Seite
   window.onload = startConfetti;
