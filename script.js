@@ -15,7 +15,8 @@ function startConfetti() {
           x: randomInRange(0.1, 0.9), // zufälliger Startpunkt entlang der X-Achse
           y: randomInRange(0.2, 0.6)  // zufälliger Startpunkt entlang der Y-Achse
         },
-        colors: ['#00bcd4', '#4facfe', '#00f2fe', '#b3e5fc', '#81d4fa'] // Blautöne für das Farbthema
+        // Rote und Blaue Farbtöne für das Konfetti
+        colors: ['#FF0000', '#0000FF'] // Rot und Blau
       });
   
       // Stoppt das Konfetti nach Ablauf der Dauer
